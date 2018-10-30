@@ -1,0 +1,5 @@
+/.git/
+/.dockerignore
+/readme.md
+/bin/
+/cli/
