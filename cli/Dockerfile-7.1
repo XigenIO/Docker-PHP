@@ -1,5 +1,7 @@
 FROM php:7.1-cli-alpine3.8
 
+WORKDIR /app
+
 RUN apk add --no-cache --virtual .build-deps \
         autoconf \
         binutils \
