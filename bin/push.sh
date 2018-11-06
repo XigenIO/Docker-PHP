@@ -1,5 +1,6 @@
 #!/bin/bash
 
+docker push xigen/php:cli-5
 docker push xigen/php:cli-7.0
 docker push xigen/php:cli-7.1
 docker push xigen/php:cli-7.2
