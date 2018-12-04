@@ -19,6 +19,7 @@ To push the locally built images to the docker hub you need to first have access
 
 ### Command line images
   - [![](https://images.microbadger.com/badges/image/xigen/php:cli-latest.svg)](https://microbadger.com/images/xigen/php:cli-latest) [xigen/php:cli-latest](https://git.xigen.co.uk/docker/php/blob/master/cli/Dockerfile-7.2)
+  - [![](https://images.microbadger.com/badges/image/xigen/php:cli-slim.svg)](https://microbadger.com/images/xigen/php:cli-slim) [xi    gen/php:cli-slim](https://git.xigen.co.uk/docker/php/blob/master/cli/Dockerfile-slim)
   - [![](https://images.microbadger.com/badges/image/xigen/php:cli-5.svg)](https://microbadger.com/images/xigen/php:cli-5) [xigen/php:cli-5](https://git.xigen.co.uk/docker/php/blob/master/cli/Dockerfile-5)
   - [![](https://images.microbadger.com/badges/image/xigen/php:cli-7.0.svg)](https://microbadger.com/images/xigen/php:cli-7.0) [xigen/php:cli-7.0](https://git.xigen.co.uk/docker/php/blob/master/cli/Dockerfile-7.0)
   - [![](https://images.microbadger.com/badges/image/xigen/php:cli-7.1.svg)](https://microbadger.com/images/xigen/php:cli-7.1) [xigen/php:cli-7.1](https://git.xigen.co.uk/docker/php/blob/master/cli/Dockerfile-7.1)
