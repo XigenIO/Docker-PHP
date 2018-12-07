@@ -17,6 +17,9 @@ To push the locally built images to the docker hub you need to first have access
 
 ## Tags
 
+### FPM images
+    - [![](https://images.microbadger.com/badges/image/xigen/php:fpm-7.svg)](https://microbadger.com/images/xigen/php:fpm-7) [xigen/php:fpm-7](https://git.xigen.co.uk/docker/php/blob/master/fpm/Dockerfile-7)
+
 ### Command line images
   - [![](https://images.microbadger.com/badges/image/xigen/php:cli-latest.svg)](https://microbadger.com/images/xigen/php:cli-latest) [xigen/php:cli-latest](https://git.xigen.co.uk/docker/php/blob/master/cli/Dockerfile-7.2)
   - [![](https://images.microbadger.com/badges/image/xigen/php:cli-slim.svg)](https://microbadger.com/images/xigen/php:cli-slim) [xi    gen/php:cli-slim](https://git.xigen.co.uk/docker/php/blob/master/cli/Dockerfile-slim)
