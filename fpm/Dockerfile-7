@@ -22,14 +22,15 @@ RUN apk add --no-cache --virtual .build-deps \
         icu-libs \
         libjpeg-turbo-dev \
         libzip-dev \
-        make
+        make \
+        openldap-dev
 
 RUN apk add --no-cache \
-        #freetype \
         icu-libs \
         libjpeg-turbo \
         libpng \
         libzip \
+        openldap \
         postfix \
         tzdata \
     && docker-php-ext-configure gd --with-gd --with-freetype-dir=/usr/include/ --with-png-dir=/usr/include/ --with-jpeg-dir=/usr/include/ \
@@ -38,17 +39,18 @@ RUN apk add --no-cache \
         exif \
         fileinfo \
         gd \
+        ldap \
         opcache \
         pdo_mysql \
         redis \
         zip \
     && apk del .build-deps \
     && rm -rf /var/cache/apk/* \
-    && rm -rf /usr/src
-
-    # && mkdir -p /var/www/var/cache/ \
-    # && chown -Rf 82:82 /var/www/var/cache/ \
-    # && mkdir -p /var/www/var/sessions/ \
-    # && chown -Rf 82:82 /var/www/var/sessions/
+    && rm -rf /usr/src \
+    # Setup fallback sessions \
+    && mkdir -p /var/www/var/cache/ \
+    && chown -Rf 82:82 /var/www/var/cache/ \
+    && mkdir -p /var/www/var/sessions/ \
+    && chown -Rf 82:82 /var/www/var/sessions/
 
 COPY ini/php.ini /usr/local/etc/php/
