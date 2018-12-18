@@ -1,31 +1,13 @@
 #!/bin/bash
 
-docker build --squash --pull -f cli/Dockerfile-5 -t xigen/php:cli-5 .
-docker build --squash --pull -f cli/Dockerfile-7.0 -t xigen/php:cli-7.0 .
-docker build --squash --pull -f cli/Dockerfile-7.1 -t xigen/php:cli-7.1 .
-docker build --squash --pull -f cli/Dockerfile-7.2 -t xigen/php:cli-7.2 -t xigen/php:cli-latest -t xigen/php:latest .
-docker build --squash --pull -f cli/Dockerfile-7.3 -t xigen/php:cli-7.3 .
-docker build --squash --pull -f cli/Dockerfile-slim -t xigen/php:cli-slim .
+source bin/utils.sh
 
-echo "Testing PHP 5 image"
-docker run --rm xigen/php:cli-5 php -v
-echo ""
+./bin/build-cli.sh Dockerfile-5 cli-5
+./bin/build-cli.sh Dockerfile-72 cli-72
+./bin/build-cli.sh Dockerfile-73 cli-73
+./bin/build-cli.sh Dockerfile-slim cli-slim
 
-echo "Testing PHP 7.0 image"
-docker run --rm xigen/php:cli-7.0 php -v
-echo ""
+dr build --squash -f cli/Dockerfile-composer -t cli-composer cli/
 
-echo "Testing PHP 7.1 image"
-docker run --rm xigen/php:cli-7.1 php -v
-echo ""
-
-echo "Testing PHP 7.2 image"
-docker run --rm xigen/php:cli-7.2 php -v
-echo ""
-
-echo "Testing PHP 7.3 image"
-docker run --rm xigen/php:cli-7.3 php -v
-echo ""
-
-echo "Testing PHP slim image"
-docker run --rm xigen/php:cli-slim php -v
+./bin/build-fpm.sh Dockerfile-5 fpm-5
+./bin/build-fpm.sh Dockerfile-7 fpm-7

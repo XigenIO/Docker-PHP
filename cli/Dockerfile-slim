@@ -2,7 +2,17 @@ FROM alpine:latest
 
 WORKDIR /app
 
-RUN apk add php7 php7-cli php7-opcache php7-ctype php7-iconv php7-mbstring php7-json php7-curl php7-dom \
+RUN apk add \
+    php7 \
+    php7-cli \
+    php7-ctype \
+    php7-curl \
+    php7-dom \
+    php7-iconv \
+    php7-json \
+    php7-mbstring \
+    php7-opcache \
+    php7-pdo \
     && rm -rf /var/cache/apk/*
 
-COPY php.ini /usr/local/etc/php/
+COPY ini/php.ini /usr/local/etc/php/

@@ -53,4 +53,5 @@ RUN curl -L -o /tmp/redis.tar.gz https://github.com/phpredis/phpredis/archive/${
     && mkdir -p /var/www/var/sessions/ \
     && chown -Rf 82:82 /var/www/var/sessions/
 
+COPY conf/www.conf /usr/local/etc/php-fpm.d/
 COPY ini/php.ini /usr/local/etc/php/

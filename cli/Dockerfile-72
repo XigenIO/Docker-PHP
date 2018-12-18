@@ -1,4 +1,4 @@
-FROM php:7.1-cli-alpine3.8
+FROM php:7.2-cli-alpine3.8
 
 WORKDIR /app
 
@@ -15,6 +15,7 @@ RUN apk add --no-cache --virtual .build-deps \
         libmcrypt-dev \
         libpng-dev \
         libxml2-dev \
+        libzip-dev \
         make \
         postfix \
     && apk add --no-cache git \
@@ -29,6 +30,4 @@ RUN apk add --no-cache --virtual .build-deps \
         zip \
     && rm -rf /var/cache/apk/*
 
-COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
-
-COPY php.ini /usr/local/etc/php/
+COPY ini/php.ini /usr/local/etc/php/
