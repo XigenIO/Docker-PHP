@@ -13,6 +13,7 @@ RUN apk add \
     php7-mbstring \
     php7-opcache \
     php7-pdo \
+    php7-pdo_mysql \
     && rm -rf /var/cache/apk/*
 
 COPY ini/php.ini /usr/local/etc/php/
