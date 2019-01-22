@@ -2,34 +2,59 @@ FROM php:7.3-cli-alpine3.8
 
 WORKDIR /app
 
-RUN apk add --no-cache --virtual .build-deps \
+ENV TZ=Europe/London
+
+ENV REDIS_VERSION="4.1.1"
+
+WORKDIR /var/www
+
+RUN curl -s -L -o /tmp/redis.tar.gz https://github.com/phpredis/phpredis/archive/${REDIS_VERSION}.tar.gz \
+    && tar xfz /tmp/redis.tar.gz \
+    && rm -r /tmp/redis.tar.gz \
+    && mkdir -p /usr/src/php/ext \
+    && mv phpredis-* /usr/src/php/ext/redis \
+# =========================================================================== #\
+    && apk add --no-cache --virtual .build-deps \
         autoconf \
         binutils \
-        curl-dev \
         freetype-dev \
         g++ \
         gcc \
-        icu-dev\
-        libcurl \
+        icu-dev \
+        icu-libs \
         libjpeg-turbo-dev \
-        libmcrypt-dev \
-        libpng-dev \
         libxml2-dev \
+        libxslt-dev \
         libzip-dev \
         make \
+        openldap-dev \
+# =========================================================================== #\
+    && apk add --no-cache \
+        freetype \
+        git \
+        icu-libs \
+        libjpeg-turbo \
+        libpng \
+        libxml2 \
+        libxslt \
+        libzip \
+        openldap \
         postfix \
-    && apk add --no-cache git \
+        tzdata \
     && docker-php-ext-configure gd --with-freetype-dir=/usr/include/ --with-jpeg-dir=/usr/include/ \
     && docker-php-ext-install -j "$(getconf _NPROCESSORS_ONLN)" \
         bcmath \
         exif \
         fileinfo \
         gd \
+        intl \
         ldap \
         opcache \
         pdo_mysql \
-        soap \
         redis \
+        soap \
+        sysvsem \
+        xsl \
         zip \
     && apk del .build-deps \
     && rm -rf /var/cache/apk/* \

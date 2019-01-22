@@ -1,7 +1,7 @@
 
 function dr()
 {
-    docker -H tcp://dev.xigen.io $@
+    docker $@
 }
 
 function build()
@@ -11,7 +11,6 @@ function build()
     local context=$3
     dr build --squash --pull -f ${file} -t ${image} ${context}
     dr image inspect ${image} --format='{{.Size}}' | awk '{ foo = $1 / 1024 / 1024 ; print foo "MB" }'
-    dr tag $image -t dev.xigen.io:5000/docker/php
 }
 
 function buildNoPull()
@@ -26,5 +25,5 @@ function buildNoPull()
 function test()
 {
     echo "Testing image";
-    #dr run --rm xigen/php:${1} php -v
+    dr run --rm xigen/php:${1} php -v
 }

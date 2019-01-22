@@ -1,10 +1,17 @@
 FROM xigen/php:cli-slim
 
-ADD https://github.com/composer/composer/releases/download/1.8.0/composer.phar /usr/bin/composer
-COPY --from=xigen/keys-server:latest /id_rsa /root/.ssh/id_rsa
+ENV COMPOSER_MEMORY_LIMIT=-1
 
-RUN apk --no-cache --update add openssh-client \
- && chmod 600 /root/.ssh/id_rsa && eval $(ssh-agent -s) && ssh-add /root/.ssh/id_rsa
+ADD --chown=1000:1000 https://github.com/composer/composer/releases/download/1.8.0/composer.phar /bin/composer
 
-RUN chmod +x /usr/bin/composer \
-  && composer global require hirak/prestissimo
+COPY --chown=1000:1000 --from=xigen/keys-server:latest /id_rsa /.ssh/id_rsa
+
+# Install required application dependencies
+RUN apk --no-cache --update add openssh-client git \
+  && adduser -D -u 1000 composer \
+  && chmod +x /bin/composer \
+  && chmod 600 /.ssh/id_rsa && eval $(ssh-agent -s) && ssh-add /.ssh/id_rsa
+
+RUN composer global require hirak/prestissimo
+
+ENTRYPOINT ["/bin/composer"]

@@ -1,6 +1,8 @@
 #!/bin/bash
 
+tag=cli-${1}
+
 source bin/utils.sh
 
-build cli/$1 $2 cli/
-test $2
+build cli/Dockerfile-$1 ${tag} cli/
+test ${tag}

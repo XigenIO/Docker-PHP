@@ -20,6 +20,8 @@ RUN curl -L -o /tmp/redis.tar.gz https://github.com/phpredis/phpredis/archive/${
         gcc \
         icu-dev \
         icu-libs \
+        libxml2-dev \
+        libxslt-dev \
         libjpeg-turbo-dev \
         libzip-dev \
         make \
@@ -30,6 +32,8 @@ RUN curl -L -o /tmp/redis.tar.gz https://github.com/phpredis/phpredis/archive/${
         icu-libs \
         libjpeg-turbo \
         libpng \
+        libxml2 \
+        libxslt \
         libzip \
         openldap \
         postfix \
@@ -41,10 +45,14 @@ RUN curl -L -o /tmp/redis.tar.gz https://github.com/phpredis/phpredis/archive/${
         exif \
         fileinfo \
         gd \
+        intl \
         ldap \
         opcache \
         pdo_mysql \
         redis \
+        soap \
+        sysvsem \
+        xsl \
         zip \
         && apk del .build-deps \
         && rm -rf /var/cache/apk/* \

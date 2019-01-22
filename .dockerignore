@@ -3,3 +3,5 @@
 /readme.md
 /bin/
 /cli/
+/fpm
+Dockerfile-*

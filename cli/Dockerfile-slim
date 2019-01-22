@@ -1,5 +1,9 @@
 FROM alpine:latest
 
+# Memory limit set to 1024MB as the composer image is based off this. Composer
+# uses lots of memory when used in development.
+ENV PHP_MEMORY_LIMIT=1024M
+
 WORKDIR /app
 
 RUN apk add \
@@ -12,8 +16,18 @@ RUN apk add \
     php7-json \
     php7-mbstring \
     php7-opcache \
+    php7-xml \
     php7-pdo \
     php7-pdo_mysql \
+    php7-phar \
     && rm -rf /var/cache/apk/*
 
-COPY ini/php.ini /usr/local/etc/php/
+COPY ini/php.ini /etc/php7/php.ini
+COPY bin/entrypoint-slim /bin/docker-entrypoint
+COPY bin/configure-php-ini /bin/configure-php-ini
+
+RUN chmod +x /bin/docker-entrypoint
+RUN chmod +x /bin/configure-php-ini
+
+ENTRYPOINT ["/bin/docker-entrypoint"]
+CMD ["php"]

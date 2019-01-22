@@ -43,12 +43,13 @@ RUN curl -L -o /tmp/redis.tar.gz https://github.com/phpredis/phpredis/archive/${
         exif \
         fileinfo \
         gd \
+        intl \
         ldap \
         opcache \
         pdo_mysql \
-        xsl \
-        soap \
         redis \
+        soap \
+        xsl \
         zip \
         && apk del .build-deps \
         && rm -rf /var/cache/apk/* \

@@ -1,6 +1,8 @@
 #!/bin/bash
 
+tag=fpm-${1}
+
 source bin/utils.sh
 
-build fpm/$1 $2 fpm/
-test
+build fpm/Dockerfile-$1 ${tag} fpm/
+test ${tag}
