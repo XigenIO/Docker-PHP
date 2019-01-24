@@ -5,6 +5,7 @@ source bin/utils.sh
 #########################
 #       CLI images      #
 #########################
+<<<<<<< HEAD
 # ./bin/build-cli.sh slim
 # dr push xigen/php:cli-slim
 #
@@ -13,12 +14,15 @@ source bin/utils.sh
 #
 ./bin/build-cli.sh 73
 dr push xigen/php:cli-73
+=======
+./bin/build-cli.sh 72
+./bin/build-cli.sh 73
+./bin/build-cli.sh slim
+./bin/build-cli.sh composer
+>>>>>>> Updated build scripts and removed old image files
 
 #########################
 #       FPM images      #
 #########################
-./bin/build-fpm.sh 72 72
-dr push xigen/php:fpm-72
-
-./bin/build-fpm.sh 73 73
-dr push xigen/php:fpm-73
+./bin/build-fpm.sh 72
+./bin/build-fpm.sh 73

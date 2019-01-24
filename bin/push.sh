@@ -1,10 +1,17 @@
 #!/bin/bash
 
-docker push xigen/php:cli-5
-docker push xigen/php:cli-7.0
-docker push xigen/php:cli-7.1
-docker push xigen/php:cli-7.2
-docker push xigen/php:cli-7.3
-docker push xigen/php:cli-latest
-docker push xigen/php:cli-slim
-docker push xigen/php:latest
+source bin/utils.sh
+
+#########################
+#       CLI images      #
+#########################
+dr push xigen/php:cli-slim
+dr push xigen/php:cli-composer
+dr push xigen/php:cli-73
+dr push xigen/php:cli-72
+
+#########################
+#       FPM images      #
+#########################
+dr push xigen/php:fpm-72
+dr push xigen/php:fpm-73
