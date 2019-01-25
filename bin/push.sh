@@ -7,8 +7,8 @@ source bin/utils.sh
 #########################
 dr push xigen/php:cli-slim
 dr push xigen/php:cli-composer
-dr push xigen/php:cli-73
 dr push xigen/php:cli-72
+dr push xigen/php:cli-73
 
 #########################
 #       FPM images      #

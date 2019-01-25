@@ -16,10 +16,11 @@ RUN apk add \
     php7-json \
     php7-mbstring \
     php7-opcache \
-    php7-xml \
     php7-pdo \
     php7-pdo_mysql \
     php7-phar \
+    php7-sodium \
+    php7-xml \
     && rm -rf /var/cache/apk/*
 
 COPY ini/php.ini /etc/php7/php.ini
