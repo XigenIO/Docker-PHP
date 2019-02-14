@@ -1,0 +1,8 @@
+#!/bin/sh
+
+/bin/configure-php-ini > /etc/php7/php.ini
+
+echo "here"
+php -v
+
+$@

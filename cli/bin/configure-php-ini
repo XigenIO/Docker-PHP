@@ -1,0 +1,5 @@
+#!/bin/sh
+
+cat <<END
+memory_limit = ${PHP_MEMORY_LIMIT}
+END
