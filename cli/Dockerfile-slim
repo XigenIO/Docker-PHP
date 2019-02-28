@@ -20,6 +20,7 @@ RUN apk add \
     php7-pdo_mysql \
     php7-phar \
     php7-sodium \
+    php7-tokenizer \
     php7-xml \
     && rm -rf /var/cache/apk/*
 

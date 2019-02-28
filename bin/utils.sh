@@ -25,5 +25,5 @@ function buildNoPull()
 function test()
 {
     echo "Testing image";
-    dr run --rm xigen/php:${1} php -v
+    dr run --entrypoint /usr/bin/php --rm xigen/php:${1} -v
 }
