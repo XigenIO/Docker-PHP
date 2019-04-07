@@ -13,5 +13,6 @@ source bin/utils.sh
 #########################
 #       FPM images      #
 #########################
+./bin/build-fpm.sh 70
 ./bin/build-fpm.sh 72
 ./bin/build-fpm.sh 73
