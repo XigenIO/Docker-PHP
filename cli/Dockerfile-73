@@ -4,7 +4,7 @@ WORKDIR /app
 
 ENV TZ=Europe/London
 
-ENV REDIS_VERSION="4.1.1"
+ENV REDIS_VERSION="4.3.0"
 
 WORKDIR /var/www
 
