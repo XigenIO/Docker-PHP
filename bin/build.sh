@@ -5,6 +5,7 @@ source bin/utils.sh
 #########################
 #       CLI images      #
 #########################
+./bin/build-cli.sh 5
 ./bin/build-cli.sh 72
 ./bin/build-cli.sh 73
 ./bin/build-cli.sh slim
@@ -14,6 +15,7 @@ source bin/utils.sh
 #########################
 #       FPM images      #
 #########################
+./bin/build-fpm.sh 5
 ./bin/build-fpm.sh 70
 ./bin/build-fpm.sh 72
 ./bin/build-fpm.sh 73
