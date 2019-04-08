@@ -18,12 +18,12 @@ function buildNoPull()
     local file=$1
     local image=xigen/php:$2
     local context=$3
-    dr build --squash -f ${file} -t ${image} ${context}
+    dr build -f ${file} -t ${image} ${context}
     dr image inspect ${image} --format='{{.Size}}' | awk '{ foo = $1 / 1024 / 1024 ; print foo "MB" }'
 }
 
 function test()
 {
     echo "Testing image";
-    dr run --entrypoint /usr/bin/php --rm xigen/php:${1} -v
+    dr run --entrypoint php --rm xigen/php:${1} -v
 }

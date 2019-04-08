@@ -22,6 +22,7 @@ RUN apk add \
     php7-sodium \
     php7-tokenizer \
     php7-xml \
+    php7-xmlwriter \
     && rm -rf /var/cache/apk/*
 
 COPY ini/php.ini /etc/php7/php.ini
