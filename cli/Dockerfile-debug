@@ -1,13 +1,10 @@
 FROM xigen/php:cli-composer
 
-RUN apk --no-cache --update add openssh-client git
+RUN apk update
 
 RUN chown -Rvf composer: /app
-
-
-
 USER composer
 
-RUN composer global -vv require phpmd/phpmd sebastian/phpcpd symfony/phpunit-bridge vimeo/psalm xigen.io/phpcs-ruleset
+RUN composer global -vv require --ignore-platform-reqs phpmd/phpmd sebastian/phpcpd symfony/phpunit-bridge vimeo/psalm xigen.io/phpcs-ruleset
 
 ENTRYPOINT ["/bin/php"]

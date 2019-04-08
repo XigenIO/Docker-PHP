@@ -1,16 +1,23 @@
+
 # PHP
 > Xigen's PHP docker images using official base Alpine images 🐳
+
+All images are available on the [Docker Hub](https://hub.docker.com/r/xigen/php) with automated public builds configured to pull form this [Github Repo](https://github.com/XigenIO/Docker-PHP). An up-to-date list of tags available use within docker project is available on the [Docker Hub](https://hub.docker.com/r/xigen/php/tags). These images are used both in development and production of PHP projects at [Xigen](https://xigen.co.uk/services).
 
 ### CLI
 | Tag | Dockerfile |
 |--|--|
+| cli-5 | [Dockerfile-5](https://github.com/XigenIO/Docker-PHP/blob/master/cli/Dockerfile-72 "Dockerfile-72") |
 | cli-72 | [Dockerfile-72](https://github.com/XigenIO/Docker-PHP/blob/master/cli/Dockerfile-72 "Dockerfile-72") |
 | cli-73 | [Dockerfile-73](https://github.com/XigenIO/Docker-PHP/blob/master/cli/Dockerfile-73 "Dockerfile-73") |
 | cli-slim | [Dockerfile-slim](https://github.com/XigenIO/Docker-PHP/blob/master/cli/Dockerfile-slim "Dockerfile-slim") |
 | cli-composer | [Dockerfile-composer](https://github.com/XigenIO/Docker-PHP/blob/master/cli/Dockerfile-composer "Dockerfile-composer") |
+| cli-debug | [Dockerfile-debug](https://github.com/XigenIO/Docker-PHP/blob/master/cli/Dockerfile-debug "Dockerfile-debug") |
+
 ### FPM
 | Tag | Dockerfile | - |
 |--|--|--|
+| fpm-5 | [Dockerfile-5](https://github.com/XigenIO/Docker-PHP/blob/master/fpm/Dockerfile-5 "Dockerfile-5") |
 | fpm-70 | [Dockerfile-70](https://github.com/XigenIO/Docker-PHP/blob/master/fpm/Dockerfile-70 "Dockerfile-70") |
 | fpm-71 | [Dockerfile-71](https://github.com/XigenIO/Docker-PHP/blob/master/fpm/Dockerfile-71 "Dockerfile-71") |
 | fpm-72 | [Dockerfile-72](https://github.com/XigenIO/Docker-PHP/blob/master/fpm/Dockerfile-72 "Dockerfile-72") |

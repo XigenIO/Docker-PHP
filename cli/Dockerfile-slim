@@ -1,8 +1,8 @@
 FROM alpine:latest
 
-# Memory limit set to 1024MB as the composer image is based off this. Composer
+# Memory limit set to 2048M as the composer image is based off this. Composer
 # uses lots of memory when used in development.
-ENV PHP_MEMORY_LIMIT=1024M
+ENV PHP_MEMORY_LIMIT=2048M
 
 WORKDIR /app
 
@@ -20,6 +20,7 @@ RUN apk add \
     php7-pdo_mysql \
     php7-phar \
     php7-sodium \
+    php7-simplexml \
     php7-tokenizer \
     php7-xml \
     php7-xmlwriter \

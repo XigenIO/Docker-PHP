@@ -1,6 +1,6 @@
 FROM xigen/php:cli-slim
 
-ENV COMPOSER_MEMORY_LIMIT=-1
+ENV COMPOSER_MEMORY_LIMIT=2048M
 
 ADD --chown=1000:1000 https://github.com/composer/composer/releases/download/1.8.0/composer.phar /bin/composer
 
