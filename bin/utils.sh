@@ -30,24 +30,19 @@ function build()
     local debug_options="--pull -f ${file} -t ${image} ${context}";
 
     echo "Building image ${image} with dockerfile=$(pwd)/${file}";
-    echo ""
     if [ "$build_debug_enable" = 1 ]; then
         debug_options="$debug_options --no-cache";
 
-        echo ""
         echo "[debug] ========================================= [debug]"
         echo "Building in $(pwd)/${context}"
         echo "[debug] ========================================= [debug]"
-        echo ""
     else
         debug_options="$debug_options  --quiet";
     fi
-    echo ""
 
     echo "Options: '$debug_options'";
     echo ""
     dr build $debug_options
-    echo ""
     echo ""
     dr image inspect ${image} --format='{{.Size}}' | awk '{ foo = $1 / 1024 / 1024 ; print foo "MB" }'
     echo ""
@@ -58,4 +53,14 @@ function test()
     echo "Testing image xigen/php:${1}";
     dr run --entrypoint php --rm xigen/php:${1} -v
     echo ""
+    dr run --entrypoint php --rm xigen/php:${1} -m
+    echo ""
+
+    if [ "$build_debug_enable" = 1 ]; then
+        echo ""
+        echo "[debug] ========================================= [debug]"
+        dr run --entrypoint php --rm xigen/php:${1} -i
+        echo "[debug] ========================================= [debug]"
+        echo ""
+    fi;
 }
