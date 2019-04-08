@@ -1,10 +1,9 @@
 FROM xigen/php:cli-composer
 
-RUN apk update
-
 RUN chown -Rvf composer: /app
+
 USER composer
 
-RUN composer global -vv require --ignore-platform-reqs phpmd/phpmd sebastian/phpcpd symfony/phpunit-bridge vimeo/psalm xigen.io/phpcs-ruleset
+RUN composer global require --ignore-platform-reqs phpmd/phpmd sebastian/phpcpd symfony/phpunit-bridge vimeo/psalm xigen.io/phpcs-ruleset
 
 ENTRYPOINT ["/bin/php"]

@@ -1,5 +1,17 @@
 #!/bin/bash
 
+export build_debug_enable=0;
+if [ -z "$1" ]; then
+      echo ""
+else
+      if [ $1 = "debug" ]; then
+            echo "debug set"
+            build_debug_enable=1;
+      else
+            echo ""
+      fi
+fi
+
 source bin/utils.sh
 
 #########################

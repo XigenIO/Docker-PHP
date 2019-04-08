@@ -1,4 +1,4 @@
-FROM alpine:latest
+FROM alpine:edge
 
 # Memory limit set to 2048M as the composer image is based off this. Composer
 # uses lots of memory when used in development.
