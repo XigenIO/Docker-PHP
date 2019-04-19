@@ -19,6 +19,12 @@ RUN apk add --no-cache --update --virtual .build-deps \
         make \
         postfix \
         libzip-dev \
+        libmemcached-dev \
+        libxrender \
+        fontconfig \
+        libcrypto1.0 \
+        openssl \
+        ttf-dejavu \
     && apk add --no-cache git icu libpng libjpeg freetype libzip \
     && docker-php-ext-configure gd --with-freetype-dir=/usr/include/ --with-jpeg-dir=/usr/include/ \
     && docker-php-ext-configure zip --with-libzip \
@@ -29,6 +35,10 @@ RUN apk add --no-cache --update --virtual .build-deps \
         pdo_mysql \
         soap \
         zip \
+    && pecl install memcached-2.2.0 \
+    && pecl install memcache \
+    && echo "extension=memcached.so" >> /usr/local/etc/php/php.ini \
+    && echo "extension=memcache.so" >> /usr/local/etc/php/php.ini \
     && apk del .build-deps \
     && rm -rf /var/cache/apk/* \
     && rm -rf /usr/src
