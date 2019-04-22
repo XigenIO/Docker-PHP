@@ -10,17 +10,18 @@ All images are available on the [Docker Hub](https://hub.docker.com/r/xigen/php)
 | cli-5 | [Dockerfile-5](https://github.com/XigenIO/Docker-PHP/blob/master/cli/Dockerfile-72 "Dockerfile-72") |
 | cli-72 | [Dockerfile-72](https://github.com/XigenIO/Docker-PHP/blob/master/cli/Dockerfile-72 "Dockerfile-72") |
 | cli-73 | [Dockerfile-73](https://github.com/XigenIO/Docker-PHP/blob/master/cli/Dockerfile-73 "Dockerfile-73") |
+| cli-74 | [Dockerfile-74](https://github.com/XigenIO/Docker-PHP/blob/master/cli/Dockerfile-74 "Dockerfile-74") |
 | cli-slim | [Dockerfile-slim](https://github.com/XigenIO/Docker-PHP/blob/master/cli/Dockerfile-slim "Dockerfile-slim") |
 | cli-composer | [Dockerfile-composer](https://github.com/XigenIO/Docker-PHP/blob/master/cli/Dockerfile-composer "Dockerfile-composer") |
 | cli-debug | [Dockerfile-debug](https://github.com/XigenIO/Docker-PHP/blob/master/cli/Dockerfile-debug "Dockerfile-debug") |
+| cli-edge | [Dockerfile-edge](https://github.com/XigenIO/Docker-PHP/blob/master/edge/cli/Dockerfile "Dockerfile") |
 
 ### FPM
 | Tag | Dockerfile | - |
 |--|--|--|
 | fpm-5 | [Dockerfile-5](https://github.com/XigenIO/Docker-PHP/blob/master/fpm/Dockerfile-5 "Dockerfile-5") |
-| fpm-70 | [Dockerfile-70](https://github.com/XigenIO/Docker-PHP/blob/master/fpm/Dockerfile-70 "Dockerfile-70") |
-| fpm-71 | [Dockerfile-71](https://github.com/XigenIO/Docker-PHP/blob/master/fpm/Dockerfile-71 "Dockerfile-71") |
 | fpm-72 | [Dockerfile-72](https://github.com/XigenIO/Docker-PHP/blob/master/fpm/Dockerfile-72 "Dockerfile-72") |
+| fpm-73 | [Dockerfile-73](https://github.com/XigenIO/Docker-PHP/blob/master/fpm/Dockerfile-71 "Dockerfile-73") |
 
 ## Tags
 Each of the above tags are built from the [Official PHP Docker](https://hub.docker.com/_/php) images. Some tags are build from other Xigen tags or use Alpine packages to install PHP (such as CLI `composer` and `slim` tags) to keep the image size low. All final tags should aim to be built as small as possible and utilize the `--quash` experimental feature where possible at build time. All required modules should be install into these source images as the source files for PHP are removed to keep image size small.  
