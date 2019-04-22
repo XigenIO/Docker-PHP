@@ -27,17 +27,17 @@ function build()
     local file=$1
     local image=xigen/php:$2
     local context=$3
-    local debug_options="--pull -f ${file} -t ${image} ${context}";
+    local debug_options="--squash -f ${file} -t ${image} ${context}";
 
-    echo "Building image ${image} with dockerfile=$(pwd)/${file}";
+    echo "Building image ${image} with dockerfile=${file}";
     if [ "$build_debug_enable" = 1 ]; then
-        debug_options="$debug_options --no-cache";
+        debug_options="$debug_options";
 
         echo "[debug] ========================================= [debug]"
         echo "Building in $(pwd)/${context}"
         echo "[debug] ========================================= [debug]"
     else
-        debug_options="$debug_options  --quiet";
+        debug_options="$debug_options --quiet";
     fi
 
     echo "Options: '$debug_options'";

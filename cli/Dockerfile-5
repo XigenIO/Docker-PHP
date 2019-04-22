@@ -39,8 +39,8 @@ RUN apk add --no-cache --update --virtual .build-deps \
     && pecl install memcache \
     && echo "extension=memcached.so" >> /usr/local/etc/php/php.ini \
     && echo "extension=memcache.so" >> /usr/local/etc/php/php.ini \
-    && apk del .build-deps \
-    && rm -rf /var/cache/apk/* \
+    && apk del .build-deps git \
+    && rm -rf /var/cache/* \
     && rm -rf /usr/src
 
 COPY ini/php.ini /usr/local/etc/php/

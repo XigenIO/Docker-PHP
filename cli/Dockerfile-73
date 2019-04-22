@@ -32,7 +32,6 @@ RUN curl -s -L -o /tmp/redis.tar.gz https://github.com/phpredis/phpredis/archive
 # =========================================================================== #\
     && apk add --no-cache \
         freetype \
-        git \
         icu-libs \
         libjpeg-turbo \
         libpng \
@@ -59,7 +58,10 @@ RUN curl -s -L -o /tmp/redis.tar.gz https://github.com/phpredis/phpredis/archive
         xsl \
         zip \
     && apk del .build-deps \
-    && rm -rf /var/cache/apk/* \
+    && rm -rf /lib/apk/db \
+    && rm -rf /usr/lib/gcc \
+    && rm -rf /usr/local/php/man \
+    && rm -rf /var/cache/* \
     && rm -rf /usr/src
 
 COPY ini/php.ini /usr/local/etc/php/
