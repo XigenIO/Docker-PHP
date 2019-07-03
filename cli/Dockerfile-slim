@@ -8,6 +8,7 @@ WORKDIR /app
 
 RUN apk add \
     php7 \
+    php7-cgi \
     php7-cli \
     php7-ctype \
     php7-curl \
@@ -16,11 +17,14 @@ RUN apk add \
     php7-json \
     php7-mbstring \
     php7-opcache \
+    php7-pcntl \
     php7-pdo \
     php7-pdo_mysql \
     php7-phar \
+    php7-posix \
     php7-sodium \
     php7-simplexml \
+    php7-session \
     php7-tokenizer \
     php7-xml \
     php7-xmlwriter \
