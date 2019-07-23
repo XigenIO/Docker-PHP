@@ -30,6 +30,7 @@ echo "##################################################"
 ./bin/build-cli.sh 73
 
 ./bin/build-cli.sh slim
+./bin/build-cli.sh ppm
 ./bin/build-cli.sh composer
 ./bin/build-cli.sh debug
 
