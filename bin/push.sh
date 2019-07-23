@@ -23,9 +23,9 @@ dr push xigen/php:fpm-5
 dr push xigen/php:fpm-70
 dr push xigen/php:fpm-72
 dr push xigen/php:fpm-73
+dr push xigen/php:fpm-wordpress
 
 dr tag xigen/php:fpm-73 xigen/php:fpm-7
 dr push xigen/php:fpm-7
 
 dr push xigen/php:cli-edge
-#dr push xigen/php:fpm-edge

@@ -27,7 +27,8 @@ function build()
     local file=$1
     local image=xigen/php:$2
     local context=$3
-    local debug_options="--squash -f ${file} -t ${image} ${context}";
+    #local debug_options="--squash -f ${file} -t ${image} ${context}";
+    local debug_options=" -f ${file} -t ${image} ${context}";
 
     echo "Building image ${image} with dockerfile=${file}";
     if [ "$build_debug_enable" = 1 ]; then

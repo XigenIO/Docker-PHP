@@ -28,7 +28,7 @@ echo "##################################################"
 ./bin/build-cli.sh 5
 ./bin/build-cli.sh 72
 ./bin/build-cli.sh 73
-./bin/build-cli.sh 74
+
 ./bin/build-cli.sh slim
 ./bin/build-cli.sh composer
 ./bin/build-cli.sh debug
@@ -39,3 +39,4 @@ echo "##################################################"
 ./bin/build-fpm.sh 5
 ./bin/build-fpm.sh 72
 ./bin/build-fpm.sh 73
+./bin/build-fpm.sh wordpress
