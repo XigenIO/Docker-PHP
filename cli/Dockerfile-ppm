@@ -1,0 +1,22 @@
+FROM xigen/php:cli-composer as composer
+
+RUN mkdir /ppm && cd /ppm && composer require php-pm/php-pm php-pm/httpkernel-adapter
+
+FROM xigen/php:cli-slim
+
+ENV APP_ENV prod
+ENV DATABASE_URL ''
+ENV PPM_PORT 80
+ENV PPM_DEBUG 0
+ENV PPM_LOGGING 1
+ENV PPM_WORKERS 4
+
+EXPOSE 80
+
+COPY --from=composer /ppm /ppm
+
+COPY bin/entrypoint-ppm /bin/docker-entrypoint
+
+RUN chmod +x /bin/docker-entrypoint
+
+ENTRYPOINT ["/bin/docker-entrypoint"]
