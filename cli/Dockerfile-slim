@@ -15,6 +15,7 @@ RUN apk add \
     php7-dom \
     php7-iconv \
     php7-json \
+    php7-ldap \
     php7-mbstring \
     php7-opcache \
     php7-pcntl \
@@ -27,6 +28,7 @@ RUN apk add \
     php7-simplexml \
     php7-session \
     php7-tokenizer \
+    php7-redis \
     php7-xml \
     php7-xmlwriter \
     && rm -rf /var/cache/apk/*
