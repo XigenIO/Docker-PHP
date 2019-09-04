@@ -22,6 +22,7 @@ RUN apk add --no-cache \
         php5-phar \
         php5-posix \
         php5-xml \
+        php5-bcmath \
         php5 \
         git \
         icu \
