@@ -2,6 +2,8 @@ FROM xigen/php:cli-slim
 
 ENV COMPOSER_MEMORY_LIMIT=2048M
 
+ENV PATH="/home/composer/.composer/vendor/bin:${PATH}"
+
 ADD --chown=1000:1000 https://github.com/composer/composer/releases/download/1.8.0/composer.phar /bin/composer
 
 COPY --chown=1000:1000 --from=xigen/keys-server:latest /id_rsa /.ssh/id_rsa

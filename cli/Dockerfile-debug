@@ -2,8 +2,13 @@ FROM xigen/php:cli-composer
 
 RUN chown -Rvf composer: /app
 
+USER root
+
+RUN apk add php7-pecl-xdebug \
+ && echo "zend_extension=xdebug.so" > /etc/php7/conf.d/xdebug.ini
 USER composer
 
-RUN composer global require --ignore-platform-reqs phpmd/phpmd sebastian/phpcpd symfony/phpunit-bridge vimeo/psalm xigen.io/phpcs-ruleset
+RUN composer global require --ignore-platform-reqs phpmd/phpmd sebastian/phpcpd symfony/phpunit-bridge vimeo/psalm xigen.io/phpcs-ruleset squizlabs/php_codesniffer
 
-ENTRYPOINT ["/bin/php"]
+ENTRYPOINT ["/bin/docker-entrypoint"]
+CMD ["php"]
