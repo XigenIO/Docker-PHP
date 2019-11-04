@@ -25,6 +25,7 @@ RUN apk add --no-cache \
         php5-bcmath \
         php5-zlib \
         php5-gd \
+        php5-openssl \
         git \
         icu \
         libpng \
