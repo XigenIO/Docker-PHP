@@ -1,6 +1,6 @@
 FROM xigen/php:cli-composer as composer
 
-RUN mkdir /ppm && cd /ppm && composer require php-pm/php-pm php-pm/httpkernel-adapter
+RUN mkdir /ppm && cd /ppm && composer require php-pm/php-pm php-pm/httpkernel-adapter && composer remove psr/log
 
 FROM xigen/php:cli-slim
 

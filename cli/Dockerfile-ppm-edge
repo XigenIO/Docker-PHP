@@ -1,0 +1,7 @@
+FROM xigen/php:cli-ppm
+
+RUN adduser --home /app -D -u 82 ppm \
+  && chown -Rvf 82:82 /app \
+  && mkdir /ppm.
+
+USER 82
