@@ -40,4 +40,5 @@ echo "##################################################"
 #./bin/build-fpm.sh 5
 ./bin/build-fpm.sh 72
 ./bin/build-fpm.sh 73
+./bin/build-fpm.sh 74
 ./bin/build-fpm.sh wordpress
