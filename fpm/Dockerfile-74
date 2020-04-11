@@ -38,10 +38,10 @@ RUN curl -L -o /tmp/redis.tar.gz https://github.com/phpredis/phpredis/archive/${
         libzip \
         openldap \
         postfix \
+        postgresql \
         tzdata \
 # =========================================================================== #\
     && docker-php-ext-configure gd --with-freetype --with-jpeg \
-    && docker-php-ext-configure zip \
     && docker-php-ext-install -j "$(getconf _NPROCESSORS_ONLN)" \
         bcmath \
         exif \
@@ -50,6 +50,7 @@ RUN curl -L -o /tmp/redis.tar.gz https://github.com/phpredis/phpredis/archive/${
         ldap \
         opcache \
         pdo_mysql \
+        pdo_pgsql \
         redis \
         soap \
         sysvsem \
