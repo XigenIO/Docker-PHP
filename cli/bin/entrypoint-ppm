@@ -1,3 +1,5 @@
 #!/bin/sh
 
+php bin/console cache:warmup -eprod -vvv
+
 php /ppm/vendor/bin/ppm start --host=0.0.0.0 --ttl=$PPM_TTL --port=$PPM_PORT --app-env=$APP_ENV --debug=$PPM_DEBUG --logging=$PPM_LOGGING --workers=$PPM_WORKERS --max-execution-time=30 --static-directory=public/
