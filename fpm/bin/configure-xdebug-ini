@@ -1,0 +1,20 @@
+#!/bin/sh
+
+cat <<END
+[xdebug]
+END
+
+if [[ -z "${XDBUG_REMOTE_HOST}" ]]; then
+    exit 0;
+fi;
+
+cat <<END
+xdebug.remote_enable=on
+xdebug.remote_host=${XDBUG_REMOTE_HOST}
+xdebug.remote_port=${XDBUG_REMOTE_PORT}
+xdebug.default_enable=1
+xdebug.remote_autostart=1
+xdebug.remote_connect_back=0
+xdebug.remote_handler=dbgp
+xdebug.idekey="${XDBUG_IDEKEY}"
+END

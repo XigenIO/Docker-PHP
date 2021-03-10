@@ -1,0 +1,9 @@
+#!/bin/sh
+
+echo "Xigen PHP FPM debug image"
+
+/bin/configure-xdebug-ini > /usr/local/etc/php/conf.d/xdebug.ini
+
+cat /usr/local/etc/php/conf.d/xdebug.ini
+
+php-fpm
