@@ -7,6 +7,7 @@ ENV PHP_MEMORY_LIMIT=2048M
 WORKDIR /app
 
 RUN apk add \
+    patch \
     php7 \
     php7-cgi \
     php7-cli \
