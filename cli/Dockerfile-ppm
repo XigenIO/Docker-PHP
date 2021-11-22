@@ -1,6 +1,6 @@
-FROM xigen/php:cli-composer as composer
+FROM composer as composer
 
-RUN mkdir /ppm && cd /ppm && composer require php-pm/php-pm php-pm/httpkernel-adapter && composer remove psr/log
+RUN mkdir /ppm && cd /ppm && composer require --ignore-platform-reqs symfony/console:v5.3.7 php-pm/php-pm php-pm/httpkernel-adapter && composer remove --ignore-platform-reqs psr/log
 
 FROM xigen/php:cli-slim
 
