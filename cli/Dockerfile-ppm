@@ -1,6 +1,6 @@
-FROM composer as composer
+FROM composer:2 as composer
 
-RUN mkdir /ppm && cd /ppm && composer require --ignore-platform-reqs symfony/console:v4.4.34 php-pm/php-pm php-pm/httpkernel-adapter psr/log:1.1.4
+RUN mkdir /ppm && cd /ppm && composer require symfony/framework-bundle:v4.4.34 && composer config platform.php 7.4 && composer require --ignore-platform-reqs symfony/console:v4.4.34 symfony/process:v4.4.34 php-pm/php-pm php-pm/httpkernel-adapter psr/log:1.1.4
 
 FROM xigen/php:cli-slim
 

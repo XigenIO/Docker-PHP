@@ -33,6 +33,7 @@ RUN apk update && apk add \
     php7-tokenizer \
     php7-xml \
     php7-xmlwriter \
+    && apk add --no-cache -X http://dl-cdn.alpinelinux.org/alpine/edge/testing php7-pecl-redis \
     && rm -rf /var/cache/apk/*
 
 COPY ini/php.ini /etc/php7/php.ini
