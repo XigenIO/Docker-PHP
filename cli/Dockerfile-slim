@@ -6,11 +6,11 @@ ENV PHP_MEMORY_LIMIT=2048M
 
 WORKDIR /app
 
-RUN apk add \
+RUN apk update && apk add \
     patch \
     php7 \
     php7-cgi \
-    php7-cli \
+    php7-common \
     php7-ctype \
     php7-curl \
     php7-dom \
@@ -31,7 +31,6 @@ RUN apk add \
     php7-session \
     php7-sqlite3 \
     php7-tokenizer \
-    php7-redis \
     php7-xml \
     php7-xmlwriter \
     && rm -rf /var/cache/apk/*
@@ -42,6 +41,8 @@ COPY bin/configure-php-ini /bin/configure-php-ini
 
 RUN chmod +x /bin/docker-entrypoint
 RUN chmod +x /bin/configure-php-ini
+
+RUN ln -s /usr/bin/php7 /usr/bin/php
 
 ENTRYPOINT ["/bin/docker-entrypoint"]
 CMD ["php"]
