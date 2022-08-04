@@ -1,4 +1,4 @@
-FROM alpine:edge
+FROM alpine:3.15
 
 # Memory limit set to 2048M as the composer image is based off this. Composer
 # uses lots of memory when used in development.
@@ -42,8 +42,6 @@ COPY bin/configure-php-ini /bin/configure-php-ini
 
 RUN chmod +x /bin/docker-entrypoint
 RUN chmod +x /bin/configure-php-ini
-
-RUN ln -s /usr/bin/php7 /usr/bin/php
 
 ENTRYPOINT ["/bin/docker-entrypoint"]
 CMD ["php"]
